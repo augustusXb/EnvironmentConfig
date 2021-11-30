@@ -79,7 +79,6 @@
   - cudnn下载地址（需要登录）： https://developer.nvidia.com/rdp/cudnn-archive 。
   下载完cudnn后，将压缩包中的文件解压到对于cuda的文件夹下。默认文件夹为：C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.2
 
-
  
 ### 1.3 安装tensorflow
  ```python
@@ -89,3 +88,12 @@
  pip install --ignore-installed--upgrade tensorflow-gpu #安装tensorflow-gpu版本 默认是最新版本
  #验证tensorflow，进入python 输入import tensorflow as tf ； print tf.__version__
  #tensorflow高版本自带keras，不用特意安装。
+ ```
+## 2、vue环境配置
+ - 安装nodejs。下载地址http://nodejs.cn/download/
+ - 更换npm源，npm config set registry https://registry.npm.taobao.org
+ - 安装vue npm install vue
+ - 初始化项目时，要先安装对应包。 npm install
+
+## 3、DRF环境配置
+ - 导入工程， pip install djangorestframework
