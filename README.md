@@ -4,6 +4,7 @@
 2 vue  
 3 djangorestframework  
 4 mysql  
+5 git
 ## 1、TensorFlow-gpu 安装（Windows系统）
 官方说明文档地址：https://www.tensorflow.org/install/gpu
 ### 1.1 conda安装
@@ -135,3 +136,37 @@ default-character-set=utf8mb4
  [4] 安装mysql服务 mysqld --install  
  [5] 启动mysql服务 net start mysql  
  [6] 进入mysql，输入命令修改密码 ALTER USER 'root'@'localhost' IDENTIFIED BY '新密码';  
+
+## 5、git 安装配置
+1.安装完成后，在gitbash中配置用户名和邮箱。
+```
+git config --global user.name "这里换上你的用户名"
+git config --global user.email "这里换上你的邮箱"
+```
+2.配置本机ssh-key值，输入一下命令（需要回车3到4次）：
+```
+ssh-keygen -t rsa -C "这里换上你的邮箱"
+```
+3.执行完之后，会在.ssh目录下生成rsa和rsa.pub 文件，将rsa.pub中的内容复制到github账户的ssh中。保存后进行验证：
+```
+ssh -T git@github.com
+```
+4.输入下列命令建立与github仓库的连接：
+```
+git remote add origin <server> #origin为自定义名，server为ssh地址
+```
+5.进入工作目录，初始化github仓库环境，之后目录下会生成.git 文件夹：
+```
+git init 
+```
+之后输入git add <filename> / git add * 将工作目录下的文件放入暂存区  
+输入 git commit -m "代码提交信息" 将暂存区的文件放入Head中。
+6.你的改动现在已经在本地仓库的 HEAD 中了。执行如下命令以将这些改动提交到远端仓库：
+git push origin master
+可以把 master 换成你想要推送的任何分支。
+7.假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：
+ ```
+git fetch origin
+git reset --hard origin/master
+```
+  这样就将远端文件的内容下载到本地了。
