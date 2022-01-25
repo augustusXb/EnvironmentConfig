@@ -1,5 +1,5 @@
 # EnvironmentConfig
-各种工作环境配置教程  
+各种工作环境配置教程  （Windows系统）
 1 Tensorflow-gpu  
 2 vue  
 3 djangorestframework  
